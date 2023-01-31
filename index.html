@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <div id="app">
+            <div class="count">
+                <input class="inp" @keyup.backspace="clear" @keyup.enter="calc" v-model="result" placeholder="0"/>
+                <br/>
+                <button class="cell num" @click="inp(num)" v-for="num in numbers">{{ num }}</button>
+                <br/>
+                <button class="cell oper" @click="inp(oper)" v-for="oper in operations">{{ oper }}</button>
+                <button class="cell oper" @click="calc" >=</button>
+                <button class="cell clear" @click="clear" >C</button>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+    </body>
+</html>
